@@ -56,3 +56,12 @@ func generate_world_flat():
 #		if (current_world_end - $TileMap.world_to_map($player.position).x) < generate_to_end:
 #			generate_world()
 #		delta_sum = 0
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == BUTTON_WHEEL_UP:
+				print(123)
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				print(321)
+			
