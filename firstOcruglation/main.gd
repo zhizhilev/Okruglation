@@ -35,7 +35,7 @@ func _ready():
 func create_enemy(pos):
 	var enemy = enemy_tscn.instance()
 	enemy.position = pos
-	self.add_child(enemy)
+	$enemies.add_child(enemy)
 
 func generate_enemy(step):
 	for x in range(current_world_end + rand_range(-5, 5), current_world_end + WIDTH):
@@ -78,12 +78,9 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			if event.button_index == BUTTON_WHEEL_UP:
-				print(123)
-				if self.scale.x < 2:
-					self.scale += Vector2(0.1, 0.1)
+				$Camera2D.zoom += Vector2(0.1, 0.1)
+
 			if event.button_index == BUTTON_WHEEL_DOWN:
-				print(321)
-				if self.scale.x > 0.1:
-					self.scale -= Vector2(0.1, 0.1)
-					print(self.get_children())
+				$Camera2D.zoom -= Vector2(0.1, 0.1)
+
 			

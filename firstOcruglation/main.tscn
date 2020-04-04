@@ -19,3 +19,5 @@ position = Vector2( 153.475, -621.432 )
 anchor_mode = 0
 current = true
 script = ExtResource( 4 )
+
+[node name="enemies" type="Node2D" parent="."]
