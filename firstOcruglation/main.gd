@@ -37,9 +37,9 @@ func create_enemy(pos):
 	enemy.position = pos
 	$enemies.add_child(enemy)
 
-func generate_enemy(step):
+func generate_enemy(step):																											
 	for x in range(current_world_end + rand_range(-5, 5), current_world_end + WIDTH):
-		if x % step == 0:
+		if x % step == 0:																							
 			for y in range(0, HEIGHT_):
 				if $TileMap.get_cell(x, y) != -1 and $TileMap.get_cell(x, y-1) == -1:
 					var pos = $TileMap.map_to_world(Vector2(x, y-1), true)
